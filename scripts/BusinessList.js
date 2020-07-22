@@ -2,24 +2,37 @@ import {useBusinesses} from "./businessProvider.js"
 import {businessHTML} from "./business.js"
 
 
+//forEach METHOD----------------------------------------------
+const contentTarget = document.querySelector(".content")
+
 export const businessList = () => {
-    
-    const businessArray = useBusinesses()
+    const businessesArray = useBusinesses()
+    contentTarget.innerHTML = "<h1>Active Businesses</h1>"
 
-    let htmlRepresentations = ""
-    for (const business of businessArray) {
-        htmlRepresentations += businessHTML(business)
-    }
-
-
-    const contentTarget = document.querySelector(".content")
-
-    contentTarget.innerHTML  += `
-    <section class="card">
-        <div class="title">Active Businesses</div>
-        ${htmlRepresentations}
-    </section>
-    `
+    businessesArray.forEach(
+        (businessObj) => {
+            contentTarget.innerHTML += businessHTML(businessObj)
+        }
+    );
 }
 
 
+//LONG-HAND METHOD----------------------------------------------
+
+// export const businessList = () => {
+    
+//     const businessArray = useBusinesses()
+
+//     let htmlRepresentations = ""
+//     for (const business of businessArray) {
+//         htmlRepresentations += businessHTML(business)
+//     }
+
+
+//     const contentTarget = document.querySelector(".content")
+
+//     contentTarget.innerHTML  += `
+//         <h1>Active Businesses</h1>
+//         ${htmlRepresentations}
+//     `
+// }

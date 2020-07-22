@@ -9,25 +9,21 @@ header {
     padding: 1%;
 }
 
-.title {
+h1 {
     font-size: large;
     font-weight: bold;
-    padding: .5%;
 }
 
 .business__name {
     font-size: medium;
     font-weight: bold;
-    padding: .5%;
+    padding: 2% 0 1% 0;
 }
 
 .business__address {
     font-size: small;
     font-weight: normal;
-    padding: .5%;
+    border-bottom: 1px solid darkgrey;
+    padding: 0 0 1rem 0;
 }
 
-.card {
-    border-bottom: 1px solid darkgrey;
-    padding: 1%;
-}
