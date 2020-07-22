@@ -1,7 +1,7 @@
-export constant businessHTML = (businessObj) => {
-    return `
+export const businessHTML = (businessObj) => {
+    return 
+    `
         <div class="business__name">${businessObj.companyName}</div>
-        <div class="business_streetAddress">${businessObj.addressFullStreet}</div>
-        <div class="business_cityStateZIP">${businessObj.addressCity}, ${businessObj.addressStateCode} ${businessObj.addressZipCode}</div>
+        <div class="business__address">${businessObj.addressFullStreet} <br>${businessObj.addressCity}, ${businessObj.addressStateCode} ${businessObj.addressZipCode}/div>
     `
 }

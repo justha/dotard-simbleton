@@ -1,10 +1,25 @@
-import {useBusiness} from "./BusinessProvider.js"
-import {businessHTML} from "./Business.js"
-
-
-
+import {useBusinesses} from "./businessProvider.js"
+import {businessHTML} from "./business.js"
 
 
 export const businessList = () => {
-    const contentElement = document.querySelector("")
+    
+    const businessArray = useBusinesses()
+
+    let htmlRepresentations = ""
+    for (const business of businessArray) {
+        htmlRepresentations += businessHTML(business)
+    }
+
+
+    const contentTarget = document.querySelector(".content")
+
+    contentTarget.innerHTML  += `
+    <section class="card">
+        <div class="title">Active Businesses</div>
+        ${htmlRepresentations}
+    </section>
+    `
 }
+
+
